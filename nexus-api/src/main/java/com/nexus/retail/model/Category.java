@@ -12,20 +12,20 @@ public class Category {
     private Long categoryId;
     private String categoryName;
 
-    public Category(Long categoryID, String categoryName) {
-        this.categoryId = categoryID;
+    public Category(Long categoryId, String categoryName) {
+        this.categoryId = categoryId;
         this.categoryName = categoryName;
     }
 
     public Category() {
     }
 
-    public Long getCategoryID() {
+    public Long getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryID(Long categoryID) {
-        this.categoryId = categoryID;
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 
     public String getCategoryName() {

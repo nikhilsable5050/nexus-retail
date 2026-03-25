@@ -14,7 +14,7 @@ import java.util.Optional;
 @Service
 public class CategoryServiceImpl implements CategoryService {
     //private List<Category> categories = new ArrayList<>();
-    private Long nextId = 1L;
+    //private Long nextId = 1L;
 
     @Autowired
     private CategoryRepository categoryRepository;
@@ -26,7 +26,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public void createCategory(Category category) {
-        category.setCategoryID(nextId++);
+        //category.setCategoryId(nextId++);
         categoryRepository.save(category);
     }
 
@@ -34,7 +34,7 @@ public class CategoryServiceImpl implements CategoryService {
     public String deleteCategory(Long categoryId) {
         List<Category> categories = categoryRepository.findAll();
         Category category = categories.stream()
-                .filter(c -> c.getCategoryID().equals(categoryId))
+                .filter(c -> c.getCategoryId().equals(categoryId))
                 .findFirst()
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource not found"));
 
@@ -47,7 +47,7 @@ public class CategoryServiceImpl implements CategoryService {
         List<Category> categories = categoryRepository.findAll();
 
         Optional<Category> optionalCategory = categories.stream()
-                .filter(c -> c.getCategoryID().equals(categoryId))
+                .filter(c -> c.getCategoryId().equals(categoryId))
                 .findFirst();
 
         if (optionalCategory.isPresent()) {
