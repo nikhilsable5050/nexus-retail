@@ -5,18 +5,12 @@ import com.nexus.retail.exceptions.ResourceNotFoundException;
 import com.nexus.retail.model.Category;
 import com.nexus.retail.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
-    //private List<Category> categories = new ArrayList<>();
-    //private Long nextId = 1L;
 
     @Autowired
     private CategoryRepository categoryRepository;
@@ -36,7 +30,6 @@ public class CategoryServiceImpl implements CategoryService {
         if(savedCategory != null) {
             throw new APIException("Category with categoryName: " + category.getCategoryName() + " already exists !!!");
         }
-        //category.setCategoryId(nextId++);
         categoryRepository.save(category);
     }
 
