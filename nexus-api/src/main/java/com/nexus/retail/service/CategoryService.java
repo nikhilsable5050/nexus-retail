@@ -1,13 +1,12 @@
 package com.nexus.retail.service;
 
 import com.nexus.retail.model.Category;
+import com.nexus.retail.payload.CategoryDTO;
 import com.nexus.retail.payload.CategoryResponse;
-
-import java.util.List;
 
 public interface CategoryService {
     CategoryResponse getAllCategories();
-    void createCategory(Category category);
+    CategoryDTO createCategory(CategoryDTO categoryDTO);
 
     String deleteCategory(Long categoryId);
 

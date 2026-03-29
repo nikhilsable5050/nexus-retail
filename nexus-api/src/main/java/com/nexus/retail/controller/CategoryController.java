@@ -1,6 +1,7 @@
 package com.nexus.retail.controller;
 
 import com.nexus.retail.model.Category;
+import com.nexus.retail.payload.CategoryDTO;
 import com.nexus.retail.payload.CategoryResponse;
 import com.nexus.retail.service.CategoryService;
 import jakarta.validation.Valid;
@@ -26,9 +27,9 @@ public class CategoryController {
     }
 
     @PostMapping("/public/categories")
-    public ResponseEntity<String> createCategory(@Valid @RequestBody Category category) {
-        categoryService.createCategory(category);
-        return new ResponseEntity<>("Category added successfully", HttpStatus.CREATED);
+    public ResponseEntity<CategoryDTO> createCategory(@Valid @RequestBody CategoryDTO categoryDTO) {
+        CategoryDTO savedCategoryDTO = categoryService.createCategory(categoryDTO);
+        return new ResponseEntity<>(savedCategoryDTO, HttpStatus.CREATED);
     }
 
     @DeleteMapping("/admin/categories/{categoryId}")
