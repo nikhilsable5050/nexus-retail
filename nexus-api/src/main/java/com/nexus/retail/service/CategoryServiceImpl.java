@@ -3,11 +3,15 @@ package com.nexus.retail.service;
 import com.nexus.retail.exceptions.APIException;
 import com.nexus.retail.exceptions.ResourceNotFoundException;
 import com.nexus.retail.model.Category;
+import com.nexus.retail.payload.CategoryDTO;
+import com.nexus.retail.payload.CategoryResponse;
 import com.nexus.retail.repositories.CategoryRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -15,13 +19,21 @@ public class CategoryServiceImpl implements CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @Autowired
+    private ModelMapper modelMapper;
+
     @Override
-    public List<Category> getAllCategories() {
+    public CategoryResponse getAllCategories() {
         List<Category> categories = categoryRepository.findAll();
         if(categories.isEmpty()) {
             throw new APIException("No category created till now." );
         }
-        return categories;
+        List<CategoryDTO> categoryDTOS = categories.stream()
+                .map(category -> modelMapper.map(category,CategoryDTO.class))
+                .toList();
+        CategoryResponse categoryResponse = new CategoryResponse();
+        categoryResponse.setContent(categoryDTOS);
+        return categoryResponse;
     }
 
     @Override
