@@ -1,5 +1,6 @@
 package com.nexus.retail.service;
 
+import com.nexus.retail.exceptions.APIException;
 import com.nexus.retail.exceptions.ResourceNotFoundException;
 import com.nexus.retail.model.Category;
 import com.nexus.retail.repositories.CategoryRepository;
@@ -27,6 +28,10 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public void createCategory(Category category) {
+        Category savedCategory = categoryRepository.findByCategoryName(category.getCategoryName());
+        if(savedCategory != null) {
+            throw new APIException("Category with categoryName: " + category.getCategoryName() + " already exists !!!");
+        }
         //category.setCategoryId(nextId++);
         categoryRepository.save(category);
     }
