@@ -16,6 +16,11 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
+    @GetMapping("/echo")
+    public ResponseEntity<String> echoMessage(@RequestParam(name = "message") String message) {
+        return new ResponseEntity<>("Echoed Message: "+ message, HttpStatus.OK);
+    }
+
     @GetMapping("/public/categories")
     public ResponseEntity<CategoryResponse> getAllCategories() {
         CategoryResponse categoryResponse = categoryService.getAllCategories();
