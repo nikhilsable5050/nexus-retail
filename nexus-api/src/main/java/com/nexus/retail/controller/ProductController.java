@@ -1,6 +1,7 @@
 package com.nexus.retail.controller;
 import com.nexus.retail.model.Product;
 import com.nexus.retail.payload.ProductDTO;
+import com.nexus.retail.payload.ProductResponse;
 import com.nexus.retail.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,5 +19,11 @@ public class ProductController {
                                                  @PathVariable Long categoryId){
         ProductDTO productDTO = productService.addProduct(categoryId, product);
         return new ResponseEntity<>(productDTO, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/public/products")
+    public ResponseEntity<ProductResponse> getAllProducts(){
+        ProductResponse productResponse = productService.getAllProducts();
+        return new ResponseEntity<>(productResponse, HttpStatus.OK);
     }
 }
