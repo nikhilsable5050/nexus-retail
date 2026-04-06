@@ -32,7 +32,7 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private FileService fileService;
 
-    @Value(("${project.image}"))
+    @Value("${project.image}")
     private String path;
 
     @Override
@@ -41,6 +41,7 @@ public class ProductServiceImpl implements ProductService {
                 .orElseThrow(() ->
                         new ResourceNotFoundException("Category","categoryId",categoryId));
 
+        System.out.println(category.getProducts());
         boolean isProductNotPresent = true;
 
         List<Product> products = category.getProducts();
