@@ -15,7 +15,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -46,7 +45,7 @@ public class CategoryServiceImpl implements CategoryService {
         categoryResponse.setPageNumber(categoryPage.getNumber());
         categoryResponse.setPageSize(categoryPage.getSize());
         categoryResponse.setTotalElements(categoryPage.getTotalElements());
-        categoryResponse.setTotalpages(categoryPage.getTotalPages());
+        categoryResponse.setTotalPages(categoryPage.getTotalPages());
         categoryResponse.setLastPage(categoryPage.isLast());
         return categoryResponse;
     }
