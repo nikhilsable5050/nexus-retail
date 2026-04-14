@@ -1,4 +1,4 @@
-package nikhilsable.springsecurity.jwt;
+package com.nexus.retail.security.jwt;
 
 public class LoginRequest {
     private String username;
