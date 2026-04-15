@@ -2,6 +2,7 @@ package com.nexus.retail.security.services;
 
 
 import com.nexus.retail.model.User;
+import com.nexus.retail.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
