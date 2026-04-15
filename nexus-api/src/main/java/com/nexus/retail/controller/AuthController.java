@@ -3,6 +3,7 @@ package com.nexus.retail.controller;
 import com.nexus.retail.model.AppRole;
 import com.nexus.retail.model.Role;
 import com.nexus.retail.model.User;
+import com.nexus.retail.repositories.RoleRepository;
 import com.nexus.retail.repositories.UserRepository;
 import com.nexus.retail.security.jwt.JwtUtils;
 import com.nexus.retail.security.request.LoginRequest;
