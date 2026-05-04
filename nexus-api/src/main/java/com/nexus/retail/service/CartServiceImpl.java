@@ -10,6 +10,7 @@ import com.nexus.retail.payload.ProductDTO;
 import com.nexus.retail.repositories.CartItemRepository;
 import com.nexus.retail.repositories.CartRepository;
 import com.nexus.retail.repositories.ProductRepository;
+import com.nexus.retail.util.AuthUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
