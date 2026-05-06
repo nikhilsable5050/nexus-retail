@@ -212,6 +212,7 @@ public class CartServiceImpl implements CartService{
         return newCart;
     }
 
+    @Transactional
     @Override
     public String deleteProductFromCart(Long cartId, Long productId) {
         Cart cart = cartRepository.findById(cartId)
