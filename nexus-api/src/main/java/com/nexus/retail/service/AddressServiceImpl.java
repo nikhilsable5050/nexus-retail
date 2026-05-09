@@ -1,5 +1,6 @@
 package com.nexus.retail.service;
 
+import com.nexus.retail.exceptions.ResourceNotFoundException;
 import com.nexus.retail.model.Address;
 import com.nexus.retail.model.User;
 import com.nexus.retail.payload.AddressDTO;
@@ -43,5 +44,12 @@ public class AddressServiceImpl implements AddressService{
         return addresses.stream()
                 .map(address -> modelMapper.map(address, AddressDTO.class))
                 .toList();
+    }
+
+    @Override
+    public AddressDTO getAddressesById(Long addressId) {
+        Address address = addressRepository.findById(addressId)
+                .orElseThrow(() -> new ResourceNotFoundException("Address", "addressId", addressId));
+        return modelMapper.map(address, AddressDTO.class);
     }
 }
