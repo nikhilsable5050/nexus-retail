@@ -4,15 +4,18 @@ import com.nexus.retail.exceptions.APIException;
 import com.nexus.retail.exceptions.ResourceNotFoundException;
 import com.nexus.retail.model.*;
 import com.nexus.retail.payload.OrderDTO;
+import com.nexus.retail.payload.OrderItemDTO;
 import com.nexus.retail.repositories.*;
 import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class OrderServiceImpl implements OrderService {
 
     @Autowired
