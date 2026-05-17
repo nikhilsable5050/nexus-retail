@@ -1,5 +1,5 @@
 import { FaExclamationTriangle } from "react-icons/fa";
-import ProductCard from "./ProductCard";
+import ProductCard from "../ProductCard";
 
 const Products = () => {
     const isLoading = true;
