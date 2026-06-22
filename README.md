@@ -24,7 +24,6 @@ Nexus Retail simulates a real-world online shopping system where users can brows
 
 ## System Architecture
 
-```text
 Client Applications
         │
         ▼
@@ -41,7 +40,6 @@ JPA / Hibernate
         │
         ▼
 PostgreSQL Database
-```
 
 ---
 
@@ -111,23 +109,43 @@ The repository includes:
 
 ## Project Structure
 
-```text
 nexus-retail
 │
 ├── nexus-api
-│   ├── controller
-│   ├── service
-│   ├── repository
-│   ├── security
-│   ├── payload
-│   └── model
+│   └── src/main/java/com/nexus/retail
+│       ├── config
+│       ├── controller
+│       ├── exceptions
+│       ├── model
+│       ├── payload
+│       ├── repositories
+│       ├── security
+│       │   ├── jwt
+│       │   ├── request
+│       │   ├── response
+│       │   └── services
+│       ├── service
+│       ├── util
+│       ├── WebSecurityConfig
+│       └── NexusApiApplication
 │
 ├── nexus-web
 │
-├── postman
+├── docs
+│   ├── postman
+│   │   └── Nexus.postman_collection.json
+│   │
+│   └── screenshots
+│       ├── 01-login-jwt.png
+│       ├── 02-create-category.png
+│       ├── 03-add-product.png
+│       ├── 04-get-products.png
+│       ├── 05-add-to-cart.png
+│       ├── 06-user-cart.png
+│       ├── 07-add-address.png
+│       └── 08-place-order.png
 │
-└── screenshots
-```
+└── README.md
 
 ---
 
