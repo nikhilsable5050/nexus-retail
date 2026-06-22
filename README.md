@@ -24,6 +24,8 @@ Nexus Retail simulates a real-world online shopping system where users can brows
 
 ## System Architecture
 
+
+```text
 Client Applications
         │
         ▼
@@ -40,6 +42,8 @@ JPA / Hibernate
         │
         ▼
 PostgreSQL Database
+```
+
 
 ---
 
@@ -109,6 +113,7 @@ The repository includes:
 
 ## Project Structure
 
+```text
 nexus-retail
 │
 ├── nexus-api
@@ -146,6 +151,8 @@ nexus-retail
 │       └── 08-place-order.png
 │
 └── README.md
+```
+
 
 ---
 
