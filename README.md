@@ -1,3 +1,4 @@
+[![Java CI with Maven](https://github.com/nikhilsable5050/nexus-retail/actions/workflows/ci.yml/badge.svg)](https://github.com/nikhilsable5050/nexus-retail/actions/workflows/ci.yml)
 # Nexus Retail
 
 Enterprise-style E-Commerce Platform built with Spring Boot, Spring Security, JWT Authentication, PostgreSQL, and React.
